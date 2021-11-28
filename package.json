@@ -20,9 +20,11 @@
   },
   "devDependencies": {
     "@types/jest": "^27.0.3",
+    "@types/mercadopago": "^1.5.5",
     "@types/paypal-rest-sdk": "^1.7.6",
     "dotenv-cli": "^4.1.0",
     "jest": "^27.3.1",
+    "mercadopago": "^1.5.9",
     "prettier": "^2.5.0",
     "ts-jest": "^27.0.7",
     "ts-node": "^10.4.0",

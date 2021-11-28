@@ -1,4 +1,4 @@
 export default interface IPaymentResponse {
   method: string;
-  query: Record<string, string>;
+  query: Record<string, string | number>;
 }
