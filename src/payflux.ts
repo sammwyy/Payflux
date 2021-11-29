@@ -6,10 +6,13 @@ import IPaymentResponse from './payment-response';
 import IPaymentResult from './payment-result';
 import IMercadopagoSettings from './mercadopago/mercadopago-settings';
 import MercadoPagoIntegration from './mercadopago/mercadopago';
+import IStripeSettings from './stripe/stripe-settings';
+import StripeIntegration from './stripe/stripe';
 
 export interface IPayfluxSettings {
   paypal?: IPaypalSettings;
   mercadopago?: IMercadopagoSettings;
+  stripe?: IStripeSettings;
 }
 
 export class Payflux {
@@ -18,7 +21,7 @@ export class Payflux {
   public constructor(settings: IPayfluxSettings) {
     this.integrations = new Map();
 
-    const { paypal, mercadopago } = settings;
+    const { paypal, mercadopago, stripe } = settings;
 
     if (paypal != null) {
       this.registerIntegration('paypal', new PaypalIntegration(paypal));
@@ -30,6 +33,12 @@ export class Payflux {
       this.registerIntegration('mercadopago', new MercadoPagoIntegration(mercadopago));
     } else {
       this.registerIntegration('mercadopago', null);
+    }
+
+    if (stripe != null) {
+      this.registerIntegration('stripe', new StripeIntegration(stripe));
+    } else {
+      this.registerIntegration('stripe', null);
     }
   }
 

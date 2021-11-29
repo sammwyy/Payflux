@@ -16,16 +16,19 @@
     "postversion": "git push && git push --tags"
   },
   "dependencies": {
-    "paypal-rest-sdk": "^1.8.1"
+    "paypal-rest-sdk": "^1.8.1",
+    "randomstring": "^1.2.1"
   },
   "devDependencies": {
     "@types/jest": "^27.0.3",
     "@types/mercadopago": "^1.5.5",
     "@types/paypal-rest-sdk": "^1.7.6",
+    "@types/randomstring": "^1.1.8",
     "dotenv-cli": "^4.1.0",
     "jest": "^27.3.1",
     "mercadopago": "^1.5.9",
     "prettier": "^2.5.0",
+    "stripe": "^8.191.0",
     "ts-jest": "^27.0.7",
     "ts-node": "^10.4.0",
     "tslint": "^6.1.3",
