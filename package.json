@@ -1,6 +1,6 @@
 {
   "name": "payflux",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Payment processor API for NodeJS. Include Stripe, PayPal & MP integration.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -45,7 +45,9 @@
     "payment",
     "checkout",
     "api",
-    "paypal"
+    "paypal",
+    "mercadopago",
+    "stripe"
   ],
   "files": [
     "dist/**/*"
