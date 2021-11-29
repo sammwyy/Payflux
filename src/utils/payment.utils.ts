@@ -6,7 +6,7 @@ export function calculateItemPrice(items: IItem[]) {
 
   for (const item of items) {
     if (item.currency === currency) {
-      price += parseInt(item.price) * item.quantity;
+      price += parseInt(item.price, 10) * item.quantity;
     }
   }
 

@@ -40,7 +40,7 @@ export default class MercadoPagoIntegration extends Integration {
       id: preference.body.id,
       description: '',
       intent: 'sale',
-      items: items,
+      items,
       method: 'mercadopago',
       status: payment.body.status,
     };
@@ -53,7 +53,7 @@ export default class MercadoPagoIntegration extends Integration {
       items.push({
         id: item.sku,
         title: item.name,
-        unit_price: parseInt(item.price),
+        unit_price: parseInt(item.price, 10),
         quantity: item.quantity,
       });
     }

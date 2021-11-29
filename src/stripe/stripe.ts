@@ -42,7 +42,7 @@ export default class StripeIntegration extends Integration {
               sku: item.sku || null,
             },
           },
-          unit_amount: parseInt(item.price) * 100,
+          unit_amount: parseInt(item.price, 10) * 100,
         },
         quantity: item.quantity,
       })),

@@ -1,12 +1,13 @@
 {
   "name": "payflux",
-  "version": "1.0.0",
+  "version": "0.0.1",
+  "description": "Payment processor API for NodeJS. Include Stripe, PayPal & MP integration.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
     "test": "dotenv -e .env jest",
     "prepare": "yarn build",

@@ -1,5 +1,5 @@
 import IPayment from '../payment';
-import Paypal, { payment, PaymentResponse } from 'paypal-rest-sdk';
+import Paypal, { PaymentResponse } from 'paypal-rest-sdk';
 import { calculateItemPrice } from '../utils/payment.utils';
 import IPaypalSettings from './paypal-settings';
 import Integration from '../integration';
@@ -63,9 +63,9 @@ export default class PaypalIntegration extends Integration {
 
         const { links = [] } = paypalPayment;
 
-        for (let i = 0; i < links.length; i++) {
-          if (links[i].rel === 'approval_url') {
-            const redirect = links[i].href;
+        for (const link of links) {
+          if (link.rel === 'approval_url') {
+            const redirect = link.href;
             resolve({
               description: payment.description,
               id: paypalPayment.id,
@@ -93,11 +93,7 @@ export default class PaypalIntegration extends Integration {
           return reject(err);
         }
 
-        if (payment.state == 'approved') {
-          resolve(this.jsonToPayment(payment));
-        } else {
-          return reject(new Error('Payment is in state ' + payment.state));
-        }
+        resolve(this.jsonToPayment(payment));
       });
     });
   }
