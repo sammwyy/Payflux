@@ -18,4 +18,4 @@ Payflux is a library that serves as a wrapper to other SDKs to handle monetary t
 
 ## Documentation
 
-Coming soon...
+Check our [Wiki](https://github.com/dotphin/Payflux/wiki)
