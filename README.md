@@ -2,7 +2,7 @@
   <img src="https://i.imgur.com/qxr0nUy.png" width="64px" />
   <h1 align="center">Payflux</h1>
   <p align="center">
-    Payment processor API for NodeJS. Include Stripe, PayPal & MP integration.
+    Payment processor API for NodeJS. Include Stripe, PayPal & MP integration
   </p>
 </p>
 
