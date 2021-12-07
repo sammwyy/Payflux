@@ -1,17 +1,27 @@
 {
   "name": "payflux",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Payment processor API for NodeJS. Include Stripe, PayPal & MP integration.",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "author": "Sammwy",
   "license": "MIT",
+  "type": "commonjs",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.js"
+  },
   "scripts": {
-    "build": "tsc",
+    "clean": "rimraf ./dist",
+    "build:cjs": "tsc -p tsconfig-cjs.json",
+    "build:esm": "tsc -p tsconfig.json",
+    "build": "yarn clean && yarn build:cjs && yarn build:esm",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
     "test": "dotenv -e .env jest",
     "prepare": "yarn build",
-    "prepublishOnly": "yarn test && yarn lint",
+    "prepublishOnly": "yarn lint",
     "preversion": "yarn lint",
     "version": "yarn format && git add -A src",
     "postversion": "git push && git push --tags"
@@ -29,6 +39,7 @@
     "jest": "^27.3.1",
     "mercadopago": "^1.5.9",
     "prettier": "^2.5.0",
+    "rimraf": "^3.0.2",
     "stripe": "^8.191.0",
     "ts-jest": "^27.0.7",
     "ts-node": "^10.4.0",
@@ -40,7 +51,13 @@
     "preset": "ts-jest",
     "testEnvironment": "node"
   },
-  "author": "Sammwy",
+  "files": [
+    "dist/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sammwyy/Payflux"
+  },
   "keywords": [
     "payment",
     "checkout",
@@ -48,8 +65,5 @@
     "paypal",
     "mercadopago",
     "stripe"
-  ],
-  "files": [
-    "dist/**/*"
   ]
 }

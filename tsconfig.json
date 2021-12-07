@@ -4,17 +4,18 @@
         "declaration": true,
         "esModuleInterop": true,
         "experimentalDecorators": true,
-        "module": "commonjs",
-        "outDir": "./dist",
+        "module": "ES2020",
+        "moduleResolution": "node",
+        "outDir": "./dist/esm",
         "rootDir": "./src",
-        "target": "es5",
-        "strict": true
+        "target": "ES2015",
+        "strict": false
     },
     "include": [
         "src"
     ],
     "exclude": [
         "node_modules",
-        "**/__tests__/*"
+        "**/tests/*"
     ]
 }

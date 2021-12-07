@@ -1,4 +1,4 @@
-import { Payflux } from '../dist';
+import { Payflux } from '../';
 
 jest.setTimeout(20000);
 
